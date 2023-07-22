@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'My_$uper_$ecre2_KeY'
 
 @app.route('/')
-@app.route('/home')
+
 def index():
     # fetch json data happens here
     # product array is formed here
