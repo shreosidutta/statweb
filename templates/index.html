@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %} 
+<title>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, reiciendis!</title>
+{% endblock %}
+
 {% block content %} 
 
 <main>
@@ -22,14 +26,14 @@
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-        {% for index in range(9): %}
+        {% for index in product_array %}
           <div class="col">
             <div class="card shadow-sm border-0 transform-on-hover" id="data-output">
 
-              <a class="lightbox" href="{{url_for('static', filename=product_array[index]["image"])}}"><img src="{{url_for('static', filename=product_array[index]["image"])}}" class="card-img-top"></a>
+              <a class="lightbox" href="#"><img src="{{ url_for('static', filename=index["image"]) }}" class="card-img-top"></a>
 
               <div class="card-body">
-                <p>{% print(product_array[index]["desc"]) %}</p>
+                <p>{% print(index["desc"], index["image"])  %}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
